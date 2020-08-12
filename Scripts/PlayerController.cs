@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     private Vector3 playerDirection;
     public Vector3 bulletDirection;
+    public Vector3 playerPosition;
     public Rigidbody rb;
     private int readyToShootCount = 0;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        playerPosition = transform.position;
         playerDirection = Vector3.right * horizontalInput + Vector3.forward * verticalInput;
         GetBulletDirection();
         if (Input.GetKeyDown(KeyCode.Space))
